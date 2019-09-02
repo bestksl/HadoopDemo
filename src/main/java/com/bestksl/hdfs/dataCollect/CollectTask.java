@@ -30,9 +30,7 @@ public class CollectTask extends TimerTask {
         //将原文件列出
         File fileSrc = new File(prop.getProperty(Constants.LOG_SOURCE_DIR));
         String temp = prop.getProperty(Constants.LOG_LEGAL_PREFIX);
-        File[] files = fileSrc.listFiles((dir, name) -> {
-            return name.startsWith(temp);
-        });
+        File[] files = fileSrc.listFiles((dir, name) -> name.startsWith(temp));
 
         //打日志(检测到文件)
         logger.info("探测到如下文件需要转移: " + Arrays.toString(files));
@@ -46,6 +44,7 @@ public class CollectTask extends TimerTask {
                 e.printStackTrace();
             }
         }
+
         File[] files1 = toUpLoadDir.listFiles();
         //打日志(转移成功)
         logger.info("已转移文件到" + toUpLoadDir.getAbsolutePath() + " 等待上传: " + Arrays.toString(files1));
