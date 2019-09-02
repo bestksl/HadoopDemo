@@ -15,7 +15,7 @@ public class DataCollectMain {
 
         try {
             timer.schedule(new TimerTaskImpl(), 0, 60 * 60 * 1000L);
-            timer.schedule(new BackUpCleanTask(), 0, 60 * 60 * 1000L);
+            //timer.schedule(new BackUpCleanTask(), 0, 60 * 60 * 1000L);
         } catch (Exception e) {
             e.printStackTrace();
         }

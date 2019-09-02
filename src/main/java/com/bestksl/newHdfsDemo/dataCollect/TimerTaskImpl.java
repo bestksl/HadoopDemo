@@ -41,7 +41,6 @@ public class TimerTaskImpl extends TimerTask {
         File logFoder = new File(properties.getProperty(Constants.LOG_SOURCE_DIR));
         String logPrefix = properties.getProperty(Constants.LOG_LEGAL_PREFIX);
         File[] files = logFoder.listFiles(((dir, name) -> name.startsWith(logPrefix)));
-
         //打日志(检测到文件)
         logger.info("检测到如下文件需要转移: " + Arrays.toString(files));
 
